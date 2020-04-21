@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Task.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    Task *testTask = [[Task alloc] initWithValue: @"Testing New Task"
+                                      setDueDate: [NSDate date]];
+    
+    [testTask print];
     // Do any additional setup after loading the view.
 }
 

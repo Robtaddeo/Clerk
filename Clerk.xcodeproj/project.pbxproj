@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		513BEF25244F3E9C00B42F5B /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF24244F3E9C00B42F5B /* Task.m */; };
 		51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16CC24476F0E004B27D0 /* AppDelegate.m */; };
 		51EF16D024476F0E004B27D0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16CF24476F0E004B27D0 /* SceneDelegate.m */; };
 		51EF16D324476F0E004B27D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16D224476F0E004B27D0 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		513BEF23244F3E9C00B42F5B /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		513BEF24244F3E9C00B42F5B /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		51EF16C824476F0E004B27D0 /* Clerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EF16CB24476F0E004B27D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		51EF16CC24476F0E004B27D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 		51EF16CA24476F0E004B27D0 /* Clerk */ = {
 			isa = PBXGroup;
 			children = (
+				513BEF24244F3E9C00B42F5B /* Task.m */,
+				513BEF23244F3E9C00B42F5B /* Task.h */,
 				51EF16CB24476F0E004B27D0 /* AppDelegate.h */,
 				51EF16CC24476F0E004B27D0 /* AppDelegate.m */,
 				51EF16CE24476F0E004B27D0 /* SceneDelegate.h */,
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513BEF25244F3E9C00B42F5B /* Task.m in Sources */,
 				51EF16D324476F0E004B27D0 /* ViewController.m in Sources */,
 				51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */,
 				51EF16DE24476F11004B27D0 /* main.m in Sources */,
