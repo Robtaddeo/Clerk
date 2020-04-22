@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Task.h"
+#import "Tab.h"
 
 @interface ViewController ()
 
@@ -21,7 +22,10 @@
     Task *testTask = [[Task alloc] initWithValue: @"Testing New Task"
                                       setDueDate: [NSDate date]];
     
-    [testTask print];
+    Tab *testTab = [[Tab alloc] initWithName: @"School"];
+    [testTab addNewTask:testTask];
+    [testTab print];
+    
     // Do any additional setup after loading the view.
 }
 
