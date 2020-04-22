@@ -18,6 +18,8 @@ NSMutableArray *notesArray;
 
     if (self = [super init]){
         self->name = name;
+        tasksArray = [[NSMutableArray alloc] init];
+        notesArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
