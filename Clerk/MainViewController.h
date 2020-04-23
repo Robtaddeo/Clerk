@@ -15,6 +15,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+@property (weak, nonatomic) IBOutlet UITableView *tasksTableView;
 
 @end
 

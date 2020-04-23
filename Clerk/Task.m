@@ -46,4 +46,8 @@ setDueDate: (NSDate *) dueDate {
     return (@"Task");
 }
 
+-(NSString *) getValue {
+    return self->value;
+}
+
 @end

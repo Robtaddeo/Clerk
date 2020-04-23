@@ -11,7 +11,6 @@
 #import "Tab.h"
 
 @interface MainViewController () {
-    NSMutableArray *testArray;
     Tab *testTab;
 }
 @end
@@ -25,14 +24,23 @@ static NSString *ShowCell = @"cell";
     
     
     // TESTING TASKS & TABS
-    Task *testTask = [[Task alloc] initWithValue: @"Testing New Task"
+    Task *testTask = [[Task alloc] initWithValue: @"Task 1"
                                       setDueDate: [NSDate date]];
     
-    Task *testTask2 = [[Task alloc] initWithValue: @"Testing New Task2"
-    setDueDate: [NSDate date]];
+    Task *testTask2 = [[Task alloc] initWithValue: @"Task 2"
+                                       setDueDate: [NSDate date]];
+    
+    Task *testTask3 = [[Task alloc] initWithValue: @"Task 3"
+                                      setDueDate: [NSDate date]];
+    
+    Task *testTask4 = [[Task alloc] initWithValue: @"Task 4"
+                                       setDueDate: [NSDate date]];
+    
     testTab = [[Tab alloc] initWithName: @"School"];
     [testTab addNewTask:testTask];
     [testTab addNewTask:testTask2];
+    [testTab addNewTask:testTask3];
+    [testTab addNewTask:testTask4];
     
     // TESTING USERNAME - TODO ADD USER CLASS
     
@@ -57,44 +65,49 @@ static NSString *ShowCell = @"cell";
     [dateFormatter setDateFormat:@"dd"];
     NSString *day = [dateFormatter stringFromDate:today];
    _dateLabel.text = [NSString stringWithFormat: @"%@, %@ %@", dayOfWeek, month, day];
-    
-    [self testArraySetup];
-    
     // Do any additional setup after loading the view.
+    
 }
 
 
--(void) testArraySetup {
-    testArray = [NSMutableArray arrayWithArray: @[@"test1", @"test2", @"test3", @"test3"]];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [testArray count];
-
-}
-
+// Populates Table
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:ShowCell
                              forIndexPath:indexPath];
     
-    ///////////// #7 display type of button on right
-    ///////////// #7 display type of button on right
-      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
-    /////////////  #8 grab opera name and put it in the cell
-    
-    /////////////  #8 grab opera name and put it in the cell
-     cell.textLabel.text = testArray[indexPath.row];
-     
-   
+//    NSLog(@"indexPath.row: %d\n", (long) indexPath.row);
+    Task *currTask = [testTab getTasksArray][indexPath.section];
+    cell.textLabel.text = [currTask getValue];
+    cell.layer.cornerRadius = 10;
     
     return cell;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [testTab getTasksCount];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 15;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *v = [UIView new];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
 
 @end
 
