@@ -10,9 +10,13 @@
 #import "Task.h"
 #import "Tab.h"
 
-@interface MainViewController ()
-
+@interface MainViewController () {
+    NSMutableArray *testArray;
+    Tab *testTab;
+}
 @end
+
+static NSString *ShowCell = @"cell";
 
 @implementation MainViewController
 
@@ -26,13 +30,9 @@
     
     Task *testTask2 = [[Task alloc] initWithValue: @"Testing New Task2"
     setDueDate: [NSDate date]];
-    
-    Tab *testTab = [[Tab alloc] initWithName: @"School"];
+    testTab = [[Tab alloc] initWithName: @"School"];
     [testTab addNewTask:testTask];
     [testTab addNewTask:testTask2];
-    [testTab print];
-    
-    
     
     // TESTING USERNAME - TODO ADD USER CLASS
     
@@ -56,13 +56,45 @@
     // Getting Day
     [dateFormatter setDateFormat:@"dd"];
     NSString *day = [dateFormatter stringFromDate:today];
-    
    _dateLabel.text = [NSString stringWithFormat: @"%@, %@ %@", dayOfWeek, month, day];
     
-    
+    [self testArraySetup];
     
     // Do any additional setup after loading the view.
 }
 
 
+-(void) testArraySetup {
+    testArray = [NSMutableArray arrayWithArray: @[@"test1", @"test2", @"test3", @"test3"]];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [testArray count];
+
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:ShowCell
+                             forIndexPath:indexPath];
+    
+    ///////////// #7 display type of button on right
+    ///////////// #7 display type of button on right
+      cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    
+    /////////////  #8 grab opera name and put it in the cell
+    
+    /////////////  #8 grab opera name and put it in the cell
+     cell.textLabel.text = testArray[indexPath.row];
+     
+   
+    
+    return cell;
+}
+
+
 @end
+

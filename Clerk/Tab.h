@@ -23,7 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) print;
 -(void) addNewTask: (Task *) newTask;
 -(NSString *) description;
-
+-(NSInteger) getTasksCount;
+-(NSMutableArray *) getTasksArray;
 @end
 
 NS_ASSUME_NONNULL_END

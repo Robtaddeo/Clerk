@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		513BEF25244F3E9C00B42F5B /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF24244F3E9C00B42F5B /* Task.m */; };
 		513BEF28244FA10400B42F5B /* Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF27244FA10400B42F5B /* Tab.m */; };
+		513BEF2E2450D70500B42F5B /* TasksTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF2D2450D70500B42F5B /* TasksTable.m */; };
+		513BEF312450EFCB00B42F5B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF302450EFCB00B42F5B /* User.m */; };
 		51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16CC24476F0E004B27D0 /* AppDelegate.m */; };
 		51EF16D024476F0E004B27D0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16CF24476F0E004B27D0 /* SceneDelegate.m */; };
 		51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16D224476F0E004B27D0 /* MainViewController.m */; };
@@ -42,6 +44,10 @@
 		513BEF24244F3E9C00B42F5B /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		513BEF26244FA10400B42F5B /* Tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tab.h; sourceTree = "<group>"; };
 		513BEF27244FA10400B42F5B /* Tab.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tab.m; sourceTree = "<group>"; };
+		513BEF2C2450D70500B42F5B /* TasksTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasksTable.h; sourceTree = "<group>"; };
+		513BEF2D2450D70500B42F5B /* TasksTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasksTable.m; sourceTree = "<group>"; };
+		513BEF2F2450EFCB00B42F5B /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		513BEF302450EFCB00B42F5B /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		51EF16C824476F0E004B27D0 /* Clerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EF16CB24476F0E004B27D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		51EF16CC24476F0E004B27D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +131,10 @@
 				51EF16DD24476F11004B27D0 /* main.m */,
 				513BEF26244FA10400B42F5B /* Tab.h */,
 				513BEF27244FA10400B42F5B /* Tab.m */,
+				513BEF2C2450D70500B42F5B /* TasksTable.h */,
+				513BEF2D2450D70500B42F5B /* TasksTable.m */,
+				513BEF2F2450EFCB00B42F5B /* User.h */,
+				513BEF302450EFCB00B42F5B /* User.m */,
 			);
 			path = Clerk;
 			sourceTree = "<group>";
@@ -277,11 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513BEF312450EFCB00B42F5B /* User.m in Sources */,
 				513BEF25244F3E9C00B42F5B /* Task.m in Sources */,
 				51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */,
 				51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */,
 				513BEF28244FA10400B42F5B /* Tab.m in Sources */,
 				51EF16DE24476F11004B27D0 /* main.m in Sources */,
+				513BEF2E2450D70500B42F5B /* TasksTable.m in Sources */,
 				51EF16D024476F0E004B27D0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

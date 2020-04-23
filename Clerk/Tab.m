@@ -37,6 +37,14 @@ NSMutableArray *notesArray;
     }
 }
 
+-(NSInteger) getTasksCount {
+    return [tasksArray count];
+}
+
+-(NSMutableArray *) getTasksArray {
+    return tasksArray;
+}
+
 -(NSString *) description {
     return (@"Tab");
 }
