@@ -18,6 +18,8 @@
 -(id) initWithValue: (NSString *) value
          setDueDate: (NSDate *) dueDate;
 
+-(NSString *) getValue;
+
 //testing tej push
 
 //-(void)setPosition: (int) newPosition;

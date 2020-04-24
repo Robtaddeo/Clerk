@@ -31,6 +31,10 @@ setDueDate: (NSDate *) dueDate {
     return self;
 }
 
+-(NSString *) getValue {
+    return self->value;
+}
+
 -(void) print{
     
     NSLog(@"Uid: %d", self->uid);
