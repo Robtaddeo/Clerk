@@ -11,38 +11,40 @@
 
 @implementation Tab
 
-NSMutableArray *tasksArray;
-NSMutableArray *notesArray;
-
 -(id) initWithName: (NSString *) name {
 
     if (self = [super init]){
         self->name = name;
-        tasksArray = [[NSMutableArray alloc] init];
-        notesArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
--(void) addNewTask: (Task *) newTask {
-    [tasksArray addObject:newTask];
+-(int) getUid {
+    return self->uid;
+}
+
+-(void) setUid:(int)uid {
+    self->uid = uid;
+}
+
+-(NSString *) getName {
+    return self->name;
+}
+
+-(void) setName:(NSString *)name {
+    self->name = name;
+}
+
+-(UIColor *) getColor {
+    return self->tabColor;
+}
+
+-(void) setColor:(UIColor *)color {
+    self->tabColor = color;
 }
 
 -(void) print{
     NSLog(@"Tab Name: %@\n", self->name);
-    NSLog(@"Task count : %d\n", (int) [tasksArray count]);
-    for (int i = 0; i < [tasksArray count]; i++) {
-        Task *currTask = tasksArray[i];
-        [currTask print];
-    }
-}
-
--(NSInteger) getTasksCount {
-    return [tasksArray count];
-}
-
--(NSMutableArray *) getTasksArray {
-    return tasksArray;
 }
 
 -(NSString *) description {

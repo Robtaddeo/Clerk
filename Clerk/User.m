@@ -10,10 +10,27 @@
 
 @implementation User
 
--(id) initWithUid:(int)uid {
-    // Todo grab stuff from firebase and populate rest of fields
+-(id) initWithUid: (int) uid
+         andName: (NSString *) name
+        andEmail: (NSString *) email
+       andImgUrl: (NSString *) imgUrl
+andNotifications: (BOOL) receiveNotifications {
+    
+    if (self = [super init]){
+        self->uid = uid;
+        self->name = name;
+        self->email = email;
+        self->imgUrl = imgUrl;
+        self->receiveNotifications = receiveNotifications;
+        self->tabs = [[NSMutableArray alloc] init];
+        self->tasks = [[NSMutableArray alloc] init];
+    }
+    
     return self;
+
 }
+
+// uid stuff
 
 -(int) getUid {
     return uid;
@@ -23,6 +40,8 @@
     self->uid = uid;
 }
 
+// Name Stuff
+
 -(NSString *) getName {
     return name;
 }
@@ -31,12 +50,43 @@
     self->name = name;
 }
 
+-(NSString *) getFirstName {
+    NSArray *array = [name componentsSeparatedByString:@" "];
+    return array[0];
+}
+
+-(NSString *) getLastName {
+    NSArray *array = [name componentsSeparatedByString:@" "];
+    return array[1];
+}
+
+// Tabs Array Stuff
+
 -(NSMutableArray *) getTabs {
     return tabs;
 }
 -(void) addTab:(Tab *) newTab {
     [tabs addObject:newTab];
 }
+-(NSInteger) getTabCount {
+    return [tabs count];
+}
+
+// Tasks Array Stuff
+
+-(NSMutableArray *) getTasks {
+    return tasks;
+}
+
+-(NSInteger) getTaskCount {
+    return [tasks count];
+}
+
+-(void) addTask:(Task *)newTask {
+    [tasks addObject:newTask];
+}
+
+// Setting Notifications ?
 
 -(BOOL) getRecieveNotifciations {
     return receiveNotifications;
@@ -45,6 +95,8 @@
 -(void) setRecieveNotifications: (BOOL) recieveNotification {
     self->receiveNotifications = recieveNotification;
 }
+
+// IMG URL Stuff
 
 -(NSString *) getImgUrl {
     return imgUrl;

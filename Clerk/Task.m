@@ -21,10 +21,12 @@
 }
 
 -(id) initWithValue: (NSString *) value
-setDueDate: (NSDate *) dueDate {
+         setDueDate: (NSDate *) dueDate
+             setTab:(Tab *)tab {
     
     if (self = [super init]){
         self->value = value;
+        self->taskTab = tab;
 //        self->dueDate = dueDate;
 //        self.postDate = [[NSDate date] descriptionWithLocale:currentLocale];
     }
@@ -33,6 +35,14 @@ setDueDate: (NSDate *) dueDate {
 
 -(NSString *) getValue {
     return self->value;
+}
+
+-(Tab *) getTab {
+    return self->taskTab;
+}
+
+-(void) setTab:(Tab *)tab {
+    self->taskTab = tab;
 }
 
 -(void) print{

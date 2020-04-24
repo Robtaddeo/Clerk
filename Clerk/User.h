@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Tab.h"
+#import "Task.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,20 +17,35 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *name;
     NSString *email;
     NSMutableArray *tabs;
+    NSMutableArray *tasks;
+    NSMutableArray *notes;
     BOOL receiveNotifications;
     NSString *imgUrl;
 }
 
--(id) initWithUid: (int) uid;
+-(id) initWithUid: (int) uid
+          andName: (NSString *) name
+         andEmail: (NSString *) email
+        andImgUrl: (NSString *) imgUrl
+ andNotifications: (BOOL) receiveNotifications;
 
 -(int) getUid;
 -(void) setUid: (int) uid;
 
 -(NSString *) getName;
 -(void) setName: (NSString *) name;
+-(NSString *) getFirstName;
+-(NSString *) getLastName;
 
 -(NSMutableArray *) getTabs;
 -(void) addTab:(Tab *) newTab;
+-(NSInteger) getTabCount;
+
+-(NSMutableArray *) getTasks;
+-(NSInteger) getTaskCount;
+-(void) addTask:(Task *) newTask;
+
+// TODO: Make notes class and functions
 
 -(BOOL) getRecieveNotifciations;
 -(void) setRecieveNotifications: (BOOL) recieveNotification;

@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (nonatomic, strong) User *currentUser;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+-(void) setUser:(User *) currentUser;
 
 @end
 

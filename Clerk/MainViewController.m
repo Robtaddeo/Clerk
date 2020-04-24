@@ -8,11 +8,11 @@
 
 #import "MainViewController.h"
 #import "Task.h"
+#import "User.h"
 #import "Tab.h"
+#import "TabViewController.h"
 
-@interface MainViewController () {
-    Tab *testTab;
-}
+@interface MainViewController ()
 @end
 
 static NSString *ShowCell = @"cell";
@@ -23,22 +23,30 @@ static NSString *ShowCell = @"cell";
     [super viewDidLoad];
     
     
+    // Setting Nav Bar Image, also setting colors and removing border
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topBarLogo"]];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    
+    // TODO: Figure out how to set status bar to black
+    
+    
+    // Setting up Swipes
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:swipeRight];
+    
     // TESTING TASKS & TABS
     
-    testTab = [[Tab alloc] initWithName: @"School"];
     
     
-    for(int i = 0; i < 1000; i++){
-        Task *newTask = [[Task alloc] initWithValue: [NSString stringWithFormat:@"Task %d", i]
-                                         setDueDate: [NSDate date]];
-        [testTab addNewTask:newTask];
-    }
-    
-    // TESTING USERNAME - TODO ADD USER CLASS
-    
-    NSString *firstname = @"Robert";
-    
-    _welcomeLabel.text = [NSString stringWithFormat: @"Welcome, %@", firstname];
+    // Sets up greeting and date labels
+    _welcomeLabel.text = [NSString stringWithFormat: @"Welcome, %@", [_currentUser getFirstName]];
     [self setUpDateLabel];
 
     // Do any additional setup after loading the view.
@@ -54,27 +62,24 @@ static NSString *ShowCell = @"cell";
                              forIndexPath:indexPath];
     
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    Task *currTask = [testTab getTasksArray][indexPath.section];
+    Task *currTask = [_currentUser getTasks][indexPath.section];
     cell.textLabel.text = [currTask getValue]; // Title Text
     cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold]
                                                 size:25];
-    cell.detailTextLabel.text = @"This is a test"; // Subtext
+    
+    cell.detailTextLabel.text = [[currTask getTab] getName]; // Subtext
     cell.layer.cornerRadius = 10;
     
-    // Random colors for now until we can get them connected to tabs
-    
-    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-    cell.backgroundColor = color;
+    cell.backgroundColor = [[currTask getTab] getColor];
     cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [testTab getTasksCount];
+    return [_currentUser getTaskCount];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -94,8 +99,7 @@ static NSString *ShowCell = @"cell";
     return v;
 }
 
-- (void)tableView:(UITableView *)tableView
-accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"button clicked?\n");
 }
 
@@ -122,5 +126,19 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     
 }
 
+- (void)handleSwipe:(UISwipeGestureRecognizer *)swipe {
+    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft){
+        [self performSegueWithIdentifier:@"swipeSettingsPage" sender:nil];
+    }
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight){
+        [self performSegueWithIdentifier:@"menuSegue" sender:nil];
+    }
+
+}
+
+-(void) setUser:(User *) currentUser {
+    _currentUser = currentUser;
+}
 @end
 

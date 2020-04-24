@@ -7,24 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Task.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Tab : NSObject {
     int uid;
     NSString *name;
-    NSMutableArray *tasks;
-    NSMutableArray *notes;
+    UIColor *tabColor;
 }
 
 -(id) initWithName: (NSString *) name;
 
+-(int) getUid;
+-(void) setUid: (int) uid;
+
+-(NSString *)getName;
+-(void) setName: (NSString *) name;
+
+-(UIColor *) getColor;
+-(void)setColor: (UIColor *) color;
+
+
 -(void) print;
--(void) addNewTask: (Task *) newTask;
 -(NSString *) description;
--(NSInteger) getTasksCount;
--(NSMutableArray *) getTasksArray;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

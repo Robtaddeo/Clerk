@@ -20,6 +20,8 @@
 		51EF16DE24476F11004B27D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16DD24476F11004B27D0 /* main.m */; };
 		51EF16E824476F11004B27D0 /* ClerkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16E724476F11004B27D0 /* ClerkTests.m */; };
 		51EF16F324476F11004B27D0 /* ClerkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16F224476F11004B27D0 /* ClerkUITests.m */; };
+		51F8981D24536FA800F1A817 /* FastSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F8981C24536FA800F1A817 /* FastSegue.m */; };
+		51F898202453700400F1A817 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F8981F2453700400F1A817 /* TabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		51EF16EE24476F11004B27D0 /* ClerkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClerkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EF16F224476F11004B27D0 /* ClerkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClerkUITests.m; sourceTree = "<group>"; };
 		51EF16F424476F11004B27D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51F8981B24536FA800F1A817 /* FastSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastSegue.h; sourceTree = "<group>"; };
+		51F8981C24536FA800F1A817 /* FastSegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastSegue.m; sourceTree = "<group>"; };
+		51F8981E2453700400F1A817 /* TabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		51F8981F2453700400F1A817 /* TabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,10 @@
 				513BEF2D2450D70500B42F5B /* TasksTable.m */,
 				513BEF2F2450EFCB00B42F5B /* User.h */,
 				513BEF302450EFCB00B42F5B /* User.m */,
+				51F8981B24536FA800F1A817 /* FastSegue.h */,
+				51F8981C24536FA800F1A817 /* FastSegue.m */,
+				51F8981E2453700400F1A817 /* TabViewController.h */,
+				51F8981F2453700400F1A817 /* TabViewController.m */,
 			);
 			path = Clerk;
 			sourceTree = "<group>";
@@ -287,9 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F8981D24536FA800F1A817 /* FastSegue.m in Sources */,
 				513BEF312450EFCB00B42F5B /* User.m in Sources */,
 				513BEF25244F3E9C00B42F5B /* Task.m in Sources */,
 				51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */,
+				51F898202453700400F1A817 /* TabViewController.m in Sources */,
 				51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */,
 				513BEF28244FA10400B42F5B /* Tab.m in Sources */,
 				51EF16DE24476F11004B27D0 /* main.m in Sources */,
