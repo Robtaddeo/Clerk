@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Note.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
     int uid;
     NSString *name;
     UIColor *tabColor;
+    NSMutableArray *notes;
 }
 
 -(id) initWithName: (NSString *) name;
@@ -28,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIColor *) getColor;
 -(void)setColor: (UIColor *) color;
 
+-(NSMutableArray *) getNotes;
+-(NSInteger) getNoteCount;
+-(void) addNote:(Note *) newNote;
 
 -(void) print;
 -(NSString *) description;

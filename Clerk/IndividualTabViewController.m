@@ -8,6 +8,7 @@
 
 #import "IndividualTabViewController.h"
 #import "TaskContainerViewController.h"
+#import "NotesContainerViewController.h"
 
 @interface IndividualTabViewController ()
 
@@ -28,6 +29,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"taskEmbedSegue"]) {
         TaskContainerViewController *embed = segue.destinationViewController;
+        embed.currentUser = _currentUser;
+        embed.currenTab = _currentTab;
+    }
+    if ([[segue identifier] isEqualToString:@"notesEmbedSegue"]) {
+        NotesContainerViewController *embed = segue.destinationViewController;
         embed.currentUser = _currentUser;
         embed.currenTab = _currentTab;
     }

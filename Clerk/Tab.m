@@ -15,6 +15,7 @@
 
     if (self = [super init]){
         self->name = name;
+        notes = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -41,6 +42,16 @@
 
 -(void) setColor:(UIColor *)color {
     self->tabColor = color;
+}
+
+-(NSMutableArray *) getNotes {
+    return notes;
+}
+-(NSInteger) getNoteCount {
+    return [notes count];
+}
+-(void) addNote:(Note *) newNote {
+    [notes addObject:newNote];
 }
 
 -(void) print{

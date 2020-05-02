@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *email;
     NSMutableArray *tabs;
     NSMutableArray *tasks;
-    NSMutableArray *notes;
     BOOL receiveNotifications;
     NSString *imgUrl;
 }
@@ -45,7 +44,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSInteger) getTaskCount;
 -(void) addTask:(Task *) newTask;
 
-// TODO: Make notes class and functions
 
 -(BOOL) getRecieveNotifciations;
 -(void) setRecieveNotifications: (BOOL) recieveNotification;

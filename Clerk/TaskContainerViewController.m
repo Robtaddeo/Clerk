@@ -27,6 +27,8 @@ NSMutableArray * myTasks;
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
     
+    _taskAddButton.layer.cornerRadius = 5;
+    
     // Filtering Tasks
     
     for(int i = 0; i < [_currentUser getTaskCount]; i++){
@@ -96,13 +98,6 @@ NSMutableArray * myTasks;
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"button clicked?\n");
-}
-
-- (void)handleSwipe:(UISwipeGestureRecognizer *)swipe {
-    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft){
-        [self performSegueWithIdentifier:@"swipeSettingsPage" sender:nil];
-    }
-
 }
 
 -(void) addNewTask:(NSString *)name atDate:(NSDate *) date {
