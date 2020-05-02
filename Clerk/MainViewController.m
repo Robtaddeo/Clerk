@@ -44,6 +44,9 @@ static NSString *ShowCell = @"cell";
     // TESTING TASKS & TABS
     
     // Sets up greeting and date labels
+    if([_currentUser getTaskCount] != 0){
+        _noTasksLabel.hidden = YES;
+    }
     [self setUpDateLabel];
 
     // Do any additional setup after loading the view.
