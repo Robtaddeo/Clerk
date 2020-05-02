@@ -21,12 +21,12 @@ static NSString *ShowCell = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     // Setting Nav Bar Image, also setting colors and removing border
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topBarLogo"]];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationItem.title = [NSString stringWithFormat: @"Welcome, %@", [_currentUser getFirstName]];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    
+
     
     // TODO: Figure out how to set status bar to black
     
@@ -43,10 +43,7 @@ static NSString *ShowCell = @"cell";
     
     // TESTING TASKS & TABS
     
-    
-    
     // Sets up greeting and date labels
-    _welcomeLabel.text = [NSString stringWithFormat: @"Welcome, %@", [_currentUser getFirstName]];
     [self setUpDateLabel];
 
     // Do any additional setup after loading the view.
@@ -130,15 +127,15 @@ static NSString *ShowCell = @"cell";
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft){
         [self performSegueWithIdentifier:@"swipeSettingsPage" sender:nil];
     }
-    
-    if (swipe.direction == UISwipeGestureRecognizerDirectionRight){
-        [self performSegueWithIdentifier:@"menuSegue" sender:nil];
-    }
 
 }
 
 -(void) setUser:(User *) currentUser {
     _currentUser = currentUser;
 }
+
+
+
+
 @end
 

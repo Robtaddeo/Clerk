@@ -8,6 +8,7 @@
 
 #import "TabViewController.h"
 #import "MainViewController.h"
+#import "IndividualTabViewController.h"
 #import "FastSegue.h"
 #import "User.h"
 #import <UIKit/UIKit.h>
@@ -153,6 +154,36 @@
         MainViewController *vc = [segue destinationViewController];
         [vc setUser: self->currentUser];
     }
+    
+//    NSInteger selectedRow = [self.tableView indexPathForSelectedRow].row;
+//    DisclosureDetailViewController *detail = segue.destinationViewController;
+//
+//    if([self.tabs[selectedRow] isEqual:@"About"]){
+//        DisclosureDetailViewController *detail = segue.destinationViewController;
+//    }
+//
+//    detail.item = self.tabs[selectedRow];
+    
+    if ([[segue identifier] isEqualToString:@"TabSegue"]) {
+        NSInteger selectedRow = [self.tableView indexPathForSelectedRow].row;
+        IndividualTabViewController *vc = [segue destinationViewController];
+        [vc setUser: self->currentUser];
+        NSMutableArray *tabs = [currentUser getTabs];
+        
+        for(int i = 0; i < [currentUser getTabCount]; i++){
+            Tab *currentTab = tabs[i];
+            
+            if([ [currentTab getName] isEqualToString: [[currentUser getTabs][selectedRow] getName]]){
+                vc.tabTitle = [currentTab getName];
+                vc.currentTab = tabs[i];
+//                vc.tabColor = [currentTab getColor];
+                break;
+            }
+        }
+        
+        
+    }
+    
 }
 
 @end

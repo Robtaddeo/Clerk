@@ -22,6 +22,8 @@
 		51EF16F324476F11004B27D0 /* ClerkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EF16F224476F11004B27D0 /* ClerkUITests.m */; };
 		51F8981D24536FA800F1A817 /* FastSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F8981C24536FA800F1A817 /* FastSegue.m */; };
 		51F898202453700400F1A817 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F8981F2453700400F1A817 /* TabViewController.m */; };
+		51FF7FBF245D1E1F003A0A45 /* IndividualTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FBE245D1E1F003A0A45 /* IndividualTabViewController.m */; };
+		51FF7FC2245D393A003A0A45 /* TaskContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FC1245D393A003A0A45 /* TaskContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		51F8981C24536FA800F1A817 /* FastSegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastSegue.m; sourceTree = "<group>"; };
 		51F8981E2453700400F1A817 /* TabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		51F8981F2453700400F1A817 /* TabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		51FF7FBD245D1E1F003A0A45 /* IndividualTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndividualTabViewController.h; sourceTree = "<group>"; };
+		51FF7FBE245D1E1F003A0A45 /* IndividualTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndividualTabViewController.m; sourceTree = "<group>"; };
+		51FF7FC0245D393A003A0A45 /* TaskContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskContainerViewController.h; sourceTree = "<group>"; };
+		51FF7FC1245D393A003A0A45 /* TaskContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,10 @@
 				51F8981C24536FA800F1A817 /* FastSegue.m */,
 				51F8981E2453700400F1A817 /* TabViewController.h */,
 				51F8981F2453700400F1A817 /* TabViewController.m */,
+				51FF7FBD245D1E1F003A0A45 /* IndividualTabViewController.h */,
+				51FF7FBE245D1E1F003A0A45 /* IndividualTabViewController.m */,
+				51FF7FC0245D393A003A0A45 /* TaskContainerViewController.h */,
+				51FF7FC1245D393A003A0A45 /* TaskContainerViewController.m */,
 			);
 			path = Clerk;
 			sourceTree = "<group>";
@@ -298,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51F8981D24536FA800F1A817 /* FastSegue.m in Sources */,
+				51FF7FC2245D393A003A0A45 /* TaskContainerViewController.m in Sources */,
 				513BEF312450EFCB00B42F5B /* User.m in Sources */,
 				513BEF25244F3E9C00B42F5B /* Task.m in Sources */,
 				51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */,
@@ -306,6 +317,7 @@
 				513BEF28244FA10400B42F5B /* Tab.m in Sources */,
 				51EF16DE24476F11004B27D0 /* main.m in Sources */,
 				513BEF2E2450D70500B42F5B /* TasksTable.m in Sources */,
+				51FF7FBF245D1E1F003A0A45 /* IndividualTabViewController.m in Sources */,
 				51EF16D024476F0E004B27D0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
