@@ -61,13 +61,12 @@ static NSString *ShowCell = @"cell";
                              dequeueReusableCellWithIdentifier:ShowCell
                              forIndexPath:indexPath];
     
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     Task *currTask = [_currentUser getTasks][indexPath.section];
     cell.textLabel.text = [currTask getValue]; // Title Text
     cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold]
                                                 size:25];
     
-    cell.detailTextLabel.text = [[currTask getTab] getName]; // Subtext
+    cell.detailTextLabel.text = cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | Due %@", [[currTask getTab] getName], [currTask getDueDateString]]; // Subtext
     cell.layer.cornerRadius = 10;
     
     cell.backgroundColor = [[currTask getTab] getColor];
@@ -75,6 +74,15 @@ static NSString *ShowCell = @"cell";
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+      [[_currentUser getTasks] removeObjectAtIndex:indexPath.row];
+      [self viewDidLoad];
+      [tableView reloadData];
+      
+  }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

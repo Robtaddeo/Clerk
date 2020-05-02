@@ -21,6 +21,9 @@
 -(NSString *) getTitle;
 -(NSString *) getValue;
 
+-(void) setTitle:(NSString *) newTitle;
+-(void) setValue:(NSString *) newValue;
+
 -(void) print;
 
 @end

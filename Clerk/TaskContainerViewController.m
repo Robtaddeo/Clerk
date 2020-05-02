@@ -58,13 +58,13 @@ NSMutableArray * myTasks;
                              dequeueReusableCellWithIdentifier:ShowCell
                              forIndexPath:indexPath];
     
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+   
     Task *currTask = myTasks[indexPath.section];
     cell.textLabel.text = [currTask getValue]; // Title Text
     cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold]
                                                 size:25];
     
-    cell.detailTextLabel.text = [[currTask getTab] getName]; // Subtext
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | Due %@", [[currTask getTab] getName], [currTask getDueDateString]]; // Subtext
     cell.layer.cornerRadius = 10;
     
     cell.backgroundColor = [[currTask getTab] getColor];
@@ -72,6 +72,15 @@ NSMutableArray * myTasks;
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+      [[_currentUser getTasks] removeObjectAtIndex:indexPath.row];
+      [self viewDidLoad];
+      [_taskTable reloadData];
+      
+  }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -126,6 +135,11 @@ NSMutableArray * myTasks;
 
 -(void) setUser:(User *) currentUser {
     _currentUser = currentUser;
+}
+
+- (void)AccessoryAction:(id)sender
+{
+    NSLog(@"%d",[sender tag]);
 }
 
 // TODO: Figure out how tf to close keyboard on anykey press

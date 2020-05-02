@@ -9,6 +9,7 @@
 #import "NotesContainerViewController.h"
 #import "Note.h"
 #import "NewNoteContainerViewController.h"
+#import "ShowNoteViewController.h"
 
 @interface NotesContainerViewController ()
 
@@ -30,9 +31,27 @@ static NSString *ShowCell = @"cell";
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // New Note Segue
+    
     if ([[segue identifier] isEqualToString:@"newNoteSegue"]) {
         newNoteContainerViewController *vc = segue.destinationViewController;
         vc.currentTab = _currenTab;
+    }
+    
+    
+    // Show note Segue
+    
+    if ([[segue identifier] isEqualToString:@"showNoteSegue"]) {
+        
+        NSInteger selectedRow = [_notesTable indexPathForSelectedRow].row;
+        ShowNoteViewController *vc = [segue destinationViewController];
+        NSMutableArray *notes = [_currenTab getNotes];
+        Note *currentNote = notes[selectedRow];
+        [vc setIndex:(int)selectedRow];
+        vc.bodyText = [currentNote getValue];
+        vc.titleText = [currentNote getTitle];
+        
     }
     
 }
@@ -44,7 +63,6 @@ static NSString *ShowCell = @"cell";
                              dequeueReusableCellWithIdentifier:ShowCell
                              forIndexPath:indexPath];
     
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     Note *currNote = [_currenTab getNotes][indexPath.section];
     cell.textLabel.text = [currNote getTitle]; // Title Text
     cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold]
@@ -87,9 +105,14 @@ static NSString *ShowCell = @"cell";
 
 // Updating View Controller after new Data
 
-
-
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+      [[_currenTab getNotes] removeObjectAtIndex:indexPath.row];
+      [self viewDidLoad];
+      [tableView reloadData];
+      
+  }
+}
 
 -(void)updateView:(NSNotification *)notification {
     [self viewDidLoad];

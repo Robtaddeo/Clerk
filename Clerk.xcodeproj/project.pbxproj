@@ -27,6 +27,8 @@
 		51FF7FC5245DCE46003A0A45 /* NotesContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FC4245DCE46003A0A45 /* NotesContainerViewController.m */; };
 		51FF7FC8245DD173003A0A45 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FC7245DD173003A0A45 /* Note.m */; };
 		51FF7FCB245DDEF7003A0A45 /* NewNoteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCA245DDEF7003A0A45 /* NewNoteContainerViewController.m */; };
+		51FF7FCE245DF0AD003A0A45 /* ShowNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCD245DF0AD003A0A45 /* ShowNoteViewController.m */; };
+		51FF7FD1245E007B003A0A45 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCF245E007B003A0A45 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		51FF7FC7245DD173003A0A45 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		51FF7FC9245DDEF7003A0A45 /* NewNoteContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewNoteContainerViewController.h; sourceTree = "<group>"; };
 		51FF7FCA245DDEF7003A0A45 /* NewNoteContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewNoteContainerViewController.m; sourceTree = "<group>"; };
+		51FF7FCC245DF0AD003A0A45 /* ShowNoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNoteViewController.h; sourceTree = "<group>"; };
+		51FF7FCD245DF0AD003A0A45 /* ShowNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNoteViewController.m; sourceTree = "<group>"; };
+		51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +175,9 @@
 				51FF7FC7245DD173003A0A45 /* Note.m */,
 				51FF7FC9245DDEF7003A0A45 /* NewNoteContainerViewController.h */,
 				51FF7FCA245DDEF7003A0A45 /* NewNoteContainerViewController.m */,
+				51FF7FCC245DF0AD003A0A45 /* ShowNoteViewController.h */,
+				51FF7FCD245DF0AD003A0A45 /* ShowNoteViewController.m */,
+				51FF7FCF245E007B003A0A45 /* Model.xcdatamodeld */,
 			);
 			path = Clerk;
 			sourceTree = "<group>";
@@ -330,7 +338,9 @@
 				51FF7FC8245DD173003A0A45 /* Note.m in Sources */,
 				51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */,
 				51F898202453700400F1A817 /* TabViewController.m in Sources */,
+				51FF7FD1245E007B003A0A45 /* Model.xcdatamodeld in Sources */,
 				51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */,
+				51FF7FCE245DF0AD003A0A45 /* ShowNoteViewController.m in Sources */,
 				513BEF28244FA10400B42F5B /* Tab.m in Sources */,
 				51FF7FCB245DDEF7003A0A45 /* NewNoteContainerViewController.m in Sources */,
 				51EF16DE24476F11004B27D0 /* main.m in Sources */,
@@ -651,6 +661,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		51FF7FCF245E007B003A0A45 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */,
+			);
+			currentVersion = 51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 51EF16C024476F0E004B27D0 /* Project object */;
 }

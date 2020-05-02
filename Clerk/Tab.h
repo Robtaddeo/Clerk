@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSMutableArray *) getNotes;
 -(NSInteger) getNoteCount;
 -(void) addNote:(Note *) newNote;
+-(void) deleteNote:(int) index;
 
 -(void) print;
 -(NSString *) description;

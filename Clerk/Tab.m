@@ -54,6 +54,10 @@
     [notes addObject:newNote];
 }
 
+-(void) deleteNote:(int) index {
+    [notes removeObjectAtIndex:index];
+}
+
 -(void) print{
     NSLog(@"Tab Name: %@\n", self->name);
 }
