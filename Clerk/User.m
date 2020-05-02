@@ -83,7 +83,7 @@ andNotifications: (BOOL) receiveNotifications {
 }
 
 -(void) addTask:(Task *)newTask {
-    [tasks addObject:newTask];
+    [tasks insertObject:newTask atIndex:0];
 }
 
 // Setting Notifications ?

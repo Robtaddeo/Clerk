@@ -63,12 +63,12 @@
     }
     
     
-    for(int i = 0; i < 1000; i++){
-        Task *newTask = [[Task alloc] initWithValue: [NSString stringWithFormat:@"Task %d", i]
-                                         setDueDate: [NSDate date]
-                                             setTab: [currentUser getTabs][arc4random() % 4]];
-        [currentUser addTask:newTask];
-    }
+//    for(int i = 0; i < 1000; i++){
+//        Task *newTask = [[Task alloc] initWithValue: [NSString stringWithFormat:@"Task %d", i]
+//                                         setDueDate: [NSDate date]
+//                                             setTab: [currentUser getTabs][arc4random() % 4]];
+//        [currentUser addTask:newTask];
+//    }
     
 }
 
