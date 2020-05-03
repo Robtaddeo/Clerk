@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "IndividualTabViewController.h"
 #import "FastSegue.h"
+#import "AddTabViewController.h"
 #import "User.h"
 #import <UIKit/UIKit.h>
 
@@ -32,6 +33,12 @@
 
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    
+    // Notification from child to update
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateView:)
+                                                 name:@"addTab"
+                                               object: nil];
 
     [self.view addGestureRecognizer:swipeLeft];
     [self.view addGestureRecognizer:swipeRight];
@@ -43,32 +50,6 @@
     
     currentUser = [[User alloc] initWithUid:0 andName:@"Robert Taddeo" andEmail:@"robtaddeo@gmail.com" andImgUrl:@"test.jpg" andNotifications:YES];
     [self performSegueWithIdentifier:@"FastSegue" sender:nil];
-    
-    Tab *schoolTab = [[Tab alloc] initWithName:@"School"];
-    Tab *workTab = [[Tab alloc] initWithName:@"Work"];
-    Tab *personalTab = [[Tab alloc] initWithName:@"Personal"];
-    Tab *exerciseTab = [[Tab alloc] initWithName:@"Exercise"];
-    
-    [currentUser addTab:schoolTab];
-    [currentUser addTab:workTab];
-    [currentUser addTab:personalTab];
-    [currentUser addTab:exerciseTab];
-    
-    for(int i = 0; i < [currentUser getTabCount]; i++) {
-        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-        UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-        [[currentUser getTabs][i] setColor:color];
-    }
-    
-    
-//    for(int i = 0; i < 1000; i++){
-//        Task *newTask = [[Task alloc] initWithValue: [NSString stringWithFormat:@"Task %d", i]
-//                                         setDueDate: [NSDate date]
-//                                             setTab: [currentUser getTabs][arc4random() % 4]];
-//        [currentUser addTask:newTask];
-//    }
     
 }
 
@@ -89,6 +70,13 @@
     cell.textLabel.text = [[currentUser getTabs][indexPath.row] getName];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+      [[currentUser getTabs] removeObjectAtIndex:indexPath.row];
+      [tableView reloadData];
+  }
 }
 
 /*
@@ -155,14 +143,12 @@
         [vc setUser: self->currentUser];
     }
     
-//    NSInteger selectedRow = [self.tableView indexPathForSelectedRow].row;
-//    DisclosureDetailViewController *detail = segue.destinationViewController;
-//
-//    if([self.tabs[selectedRow] isEqual:@"About"]){
-//        DisclosureDetailViewController *detail = segue.destinationViewController;
-//    }
-//
-//    detail.item = self.tabs[selectedRow];
+    if ([[segue identifier] isEqualToString:@"addTabSegue"]) {
+
+        // Get destination view
+        AddTabViewController *vc = [segue destinationViewController];
+        vc.currentUser = self->currentUser;
+    }
     
     if ([[segue identifier] isEqualToString:@"TabSegue"]) {
         NSInteger selectedRow = [self.tableView indexPathForSelectedRow].row;
@@ -184,6 +170,14 @@
         
     }
     
+}
+
+
+// Updates Current User with new Tab ;)
+-(void)updateView:(NSNotification *)notification {
+    NSDictionary *dict = notification.userInfo;
+    currentUser = [dict valueForKey:@"user"];
+    [_tabsTable reloadData];
 }
 
 @end

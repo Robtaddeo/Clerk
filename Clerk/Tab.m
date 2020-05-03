@@ -51,9 +51,7 @@
     return [notes count];
 }
 -(void) addNote:(Note *) newNote {
-    [notes addObject:newNote];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate" ascending:TRUE];
-    [notes sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [notes insertObject:newNote atIndex:0];
 }
 
 -(void) deleteNote:(int) index {

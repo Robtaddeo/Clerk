@@ -25,6 +25,11 @@ static NSString *ShowCell = @"cell";
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateView:)
                                                  name:@"addNote" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateNote:)
+                                                 name:@"updateNote"
+                                               object: nil];
     // Do any additional setup after loading the view.
 }
 
@@ -44,11 +49,11 @@ static NSString *ShowCell = @"cell";
     
     if ([[segue identifier] isEqualToString:@"showNoteSegue"]) {
         
-        NSInteger selectedRow = [_notesTable indexPathForSelectedRow].row;
+        NSInteger selectedRow = [_notesTable indexPathForSelectedRow].section;
         ShowNoteViewController *vc = [segue destinationViewController];
         NSMutableArray *notes = [_currenTab getNotes];
         Note *currentNote = notes[selectedRow];
-        [vc setIndex:(int)selectedRow];
+        [vc setIndex:(int) selectedRow];
         vc.bodyText = [currentNote getValue];
         vc.titleText = [currentNote getTitle];
         
@@ -99,18 +104,12 @@ static NSString *ShowCell = @"cell";
     return v;
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"button clicked?\n");
-}
-
 // Updating View Controller after new Data
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
       [[_currenTab getNotes] removeObjectAtIndex:indexPath.row];
-      [self viewDidLoad];
       [tableView reloadData];
-      
   }
 }
 
@@ -119,4 +118,14 @@ static NSString *ShowCell = @"cell";
     [_notesTable reloadData];
 }
 
+// Updates Current User with new Tab ;)
+// TODO: Be able to update notes
+-(void)updateNote:(NSNotification *)notification {
+//    NSDictionary *dict = notification.userInfo;
+//    int index = (int) [dict valueForKey:@"index"];
+//    Note *newNote = [dict valueForKey:@"note"];
+//    NSString* name = [newNote getTitle];
+////    [[_currenTab getNotes][index] setTitle:name];
+//    [_notesTable reloadData];
+}
 @end

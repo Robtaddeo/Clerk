@@ -112,9 +112,9 @@ NSMutableArray * myTasks;
 -(void) addNewTask:(NSString *)name atDate:(NSDate *) date {
     
     Task *newTask = [[Task alloc]initWithValue:name setDueDate:date setTab:_currenTab];
-    NSLog(@"%@", [NSString stringWithFormat:@"Count: %ld", (long)[_currentUser getTaskCount]]);
+//    NSLog(@"%@", [NSString stringWithFormat:@"Count: %ld", (long)[_currentUser getTaskCount]]);
     [_currentUser addTask:newTask];
-    NSLog(@"%@", [NSString stringWithFormat:@"Count: %ld", (long)[_currentUser getTaskCount]]);
+//    NSLog(@"%@", [NSString stringWithFormat:@"Count: %ld", (long)[_currentUser getTaskCount]]);
     
     [self viewDidLoad];
     [_taskTable reloadData];
@@ -135,11 +135,6 @@ NSMutableArray * myTasks;
 
 -(void) setUser:(User *) currentUser {
     _currentUser = currentUser;
-}
-
-- (void)AccessoryAction:(id)sender
-{
-    NSLog(@"%d",[sender tag]);
 }
 
 // TODO: Figure out how tf to close keyboard on anykey press

@@ -13,6 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TabViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableView *tabsTable;
 
 @end
 

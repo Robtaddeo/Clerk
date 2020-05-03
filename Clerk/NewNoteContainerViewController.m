@@ -21,6 +21,8 @@
     _titleTextView.text = @"Enter Your Title";
     _titleTextView.textColor = [UIColor lightGrayColor];
     
+    // Removing Keyboard
+    
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
@@ -69,9 +71,9 @@
                         initWithTitle: _titleTextView.text
                              setValue:_bodyTextView.text
                         ];
-         
+
         [_currentTab addNote:newNote];
-        
+
         [[NSNotificationCenter defaultCenter] postNotificationName:@"addNote" object:nil];
         [self dismissViewControllerAnimated:YES completion:nil];
     }

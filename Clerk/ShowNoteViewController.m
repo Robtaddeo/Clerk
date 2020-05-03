@@ -7,15 +7,19 @@
 //
 
 #import "ShowNoteViewController.h"
+#import "Note.h"
 
 @interface ShowNoteViewController ()
 
 @end
 
 @implementation ShowNoteViewController
+Note *currentNote;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    currentNote = [[Note alloc] initWithTitle:_titleText setValue:_bodyText];
     _titleTextView.text = _titleText;
     _bodyTextView.text = _bodyText;
     
@@ -53,10 +57,11 @@
 }
 
 -(void) textViewDidChange:(UITextView *)textView {
-    
-    NSLog(@"yes");
-    [[_currentTab getNotes][index] setTitle:_titleTextView.text];
-//    [[_currentTab getNotes][index] setValue:_bodyTextView.text];
+    [currentNote setTitle:_titleTextView.text];
+    [currentNote setValue:_bodyTextView.text];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObject:currentNote forKey:@"note"];
+    dict[@"index"] = [NSNumber numberWithInt:index];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateNote" object:nil userInfo:dict];
 
 }
 
