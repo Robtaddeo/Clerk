@@ -1,7 +1,5 @@
 # Clerk
 
-## Description
-
 Your life is busy, and sometimes, it’s impossible to remember everything there is to do in a day.
 Have you ever found yourself missing that call, deadline or reminder? Ever wish there was someone
 to help plan your life with you? Look no further, Clerk is the assistant you’ve been looking for.
