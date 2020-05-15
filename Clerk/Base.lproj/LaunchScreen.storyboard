@@ -15,15 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LzL-kI-x80">
-                                <rect key="frame" x="53" y="304" width="309" height="289"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clerk_logo_1024 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="SdM-ki-iqr">
+                                <rect key="frame" x="87" y="336" width="240" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="LzL-kI-x80" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Icd-Eb-Pdc"/>
-                            <constraint firstItem="LzL-kI-x80" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jfY-60-SEN"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -32,4 +29,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clerk_logo_1024 (1)" width="1024" height="1024"/>
+    </resources>
 </document>

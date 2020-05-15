@@ -21,12 +21,12 @@ static NSString *ShowCell = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     // Setting Nav Bar Image, also setting colors and removing border
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topBarLogo"]];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationItem.title = [NSString stringWithFormat: @"Welcome, %@", [_currentUser getFirstName]];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    
+
     
     // TODO: Figure out how to set status bar to black
     
@@ -43,10 +43,10 @@ static NSString *ShowCell = @"cell";
     
     // TESTING TASKS & TABS
     
-    
-    
     // Sets up greeting and date labels
-    _welcomeLabel.text = [NSString stringWithFormat: @"Welcome, %@", [_currentUser getFirstName]];
+    if([_currentUser getTaskCount] != 0){
+        _noTasksLabel.hidden = YES;
+    }
     [self setUpDateLabel];
 
     // Do any additional setup after loading the view.
@@ -61,13 +61,12 @@ static NSString *ShowCell = @"cell";
                              dequeueReusableCellWithIdentifier:ShowCell
                              forIndexPath:indexPath];
     
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     Task *currTask = [_currentUser getTasks][indexPath.section];
     cell.textLabel.text = [currTask getValue]; // Title Text
     cell.textLabel.font = [UIFont fontWithDescriptor:[cell.textLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold]
                                                 size:25];
     
-    cell.detailTextLabel.text = [[currTask getTab] getName]; // Subtext
+    cell.detailTextLabel.text = cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ | Due %@", [[currTask getTab] getName], [currTask getDueDateString]]; // Subtext
     cell.layer.cornerRadius = 10;
     
     cell.backgroundColor = [[currTask getTab] getColor];
@@ -75,6 +74,15 @@ static NSString *ShowCell = @"cell";
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+      [[_currentUser getTasks] removeObjectAtIndex:indexPath.row];
+      [self viewDidLoad];
+      [tableView reloadData];
+      
+  }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -130,15 +138,15 @@ static NSString *ShowCell = @"cell";
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft){
         [self performSegueWithIdentifier:@"swipeSettingsPage" sender:nil];
     }
-    
-    if (swipe.direction == UISwipeGestureRecognizerDirectionRight){
-        [self performSegueWithIdentifier:@"menuSegue" sender:nil];
-    }
 
 }
 
 -(void) setUser:(User *) currentUser {
     _currentUser = currentUser;
 }
+
+
+
+
 @end
 

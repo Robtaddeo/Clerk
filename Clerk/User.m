@@ -83,7 +83,9 @@ andNotifications: (BOOL) receiveNotifications {
 }
 
 -(void) addTask:(Task *)newTask {
-    [tasks addObject:newTask];
+    [tasks insertObject:newTask atIndex:0];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate" ascending:TRUE];
+    [tasks sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
 
 // Setting Notifications ?

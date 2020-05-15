@@ -18,6 +18,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
+@property (weak, nonatomic) IBOutlet UILabel *noTasksLabel;
+
+
 -(void) setUser:(User *) currentUser;
 
 @end

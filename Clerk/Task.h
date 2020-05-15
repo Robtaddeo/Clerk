@@ -13,6 +13,7 @@
     int uid;
     NSString *value;
     BOOL complete;
+    NSDate *dueDate;
     Tab *taskTab;
     
 }
@@ -26,6 +27,7 @@
 -(Tab *) getTab;
 -(void) setTab: (Tab *) tab;
 
+-(NSString *) getDueDateString;
 -(void) print;
 
 @end

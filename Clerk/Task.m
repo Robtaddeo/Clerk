@@ -27,7 +27,7 @@
     if (self = [super init]){
         self->value = value;
         self->taskTab = tab;
-//        self->dueDate = dueDate;
+        self->dueDate = dueDate;
 //        self.postDate = [[NSDate date] descriptionWithLocale:currentLocale];
     }
     return self;
@@ -43,6 +43,27 @@
 
 -(void) setTab:(Tab *)tab {
     self->taskTab = tab;
+}
+
+-(NSString *)getDueDateString {
+     
+     // Date Label
+     NSDate *date = self->dueDate;
+     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+     
+     // Getting day of week
+     [dateFormatter setDateFormat:@"EEEE"];
+     NSString *dayOfWeek = [dateFormatter stringFromDate:date];
+     
+     // Getting Month
+     [dateFormatter setDateFormat:@"MMMM"];
+     NSString *month = [dateFormatter stringFromDate:date];
+     
+     // Getting Day
+     [dateFormatter setDateFormat:@"dd"];
+     NSString *day = [dateFormatter stringFromDate:date];
+     return [NSString stringWithFormat: @"%@, %@ %@", dayOfWeek, month, day];
+    
 }
 
 -(void) print{
