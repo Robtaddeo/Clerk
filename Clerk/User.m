@@ -62,6 +62,10 @@ andNotifications: (BOOL) receiveNotifications {
 
 // Tabs Array Stuff
 
+-(void) setTabs: (NSArray *) list{
+    tabs = list;
+}
+
 -(NSMutableArray *) getTabs {
     return tabs;
 }

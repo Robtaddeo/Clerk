@@ -8,6 +8,7 @@
 
 #import "NewNoteContainerViewController.h"
 #import "Note.h"
+#import "AppDelegate.h"
 
 @interface newNoteContainerViewController ()
 
@@ -73,6 +74,26 @@
                         ];
 
         [_currentTab addNote:newNote];
+        
+        ///====================================================================
+            
+            AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+            NSManagedObjectContext* context = appDelegate.managedObjectContext;
+        
+        NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+        
+        NSManagedObject *parentTab = [NSEntityDescription insertNewObjectForEntityForName:@"Tab" inManagedObjectContext:context];
+        
+        [parentTab setValue:_currentTab.getName forKey:@"title"];
+        
+        [entityNameObj setValue:_titleTextView.text forKey:@"title"];
+        [entityNameObj setValue:_bodyTextView.text forKey:@"content"];
+        
+        [entityNameObj setValue:parentTab forKey:@"parentTab"];
+        
+        [((AppDelegate*)[[UIApplication sharedApplication] delegate]) saveContext];
+        
+        ///====================================================================
 
         [[NSNotificationCenter defaultCenter] postNotificationName:@"addNote" object:nil];
         [self dismissViewControllerAnimated:YES completion:nil];

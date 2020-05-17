@@ -8,6 +8,9 @@
 
 #import "AddTabViewController.h"
 #import "Tab.h"
+#import "AppDelegate.h"
+
+
 
 @interface AddTabViewController ()
 
@@ -91,6 +94,26 @@
         Tab *newTab = [[Tab alloc] initWithName: _tabNameTextField.text];
         [newTab setColor: (UIColor *) _addTabButton.backgroundColor];
         [_currentUser addTab:newTab];
+        
+//        NSManagedObjectContext *context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]).persistentContainer.viewContext;
+        
+    ///====================================================================
+        
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        NSManagedObjectContext* context = appDelegate.managedObjectContext;
+        
+        
+        NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"Tab" inManagedObjectContext:context];
+        [entityNameObj setValue:_tabNameTextField.text forKey:@"title"];
+        
+        [((AppDelegate*)[[UIApplication sharedApplication] delegate]) saveContext];
+//        [context saveContext];
+        
+        NSFetchRequest *testRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tab"];
+        NSArray *results = [context executeRequest:testRequest error:nil];
+        NSLog(@"Tab was named: ", [results valueForKey:@"title"]);
+        
+    ///====================================================================
         
         NSDictionary *dict = [NSDictionary dictionaryWithObject:_currentUser forKey:@"user"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"addTab" object:nil userInfo:dict];

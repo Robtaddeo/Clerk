@@ -6,9 +6,9 @@ target 'Clerk' do
   use_frameworks!
 
   # Pods for Clerk
-  pod 'Firebase/Database'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Analytics'
+#  pod 'Firebase/Database'
+#  pod 'Firebase/Auth'
+#  pod 'Firebase/Analytics'
 
 
   target 'ClerkTests' do

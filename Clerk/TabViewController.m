@@ -12,6 +12,7 @@
 #import "FastSegue.h"
 #import "AddTabViewController.h"
 #import "User.h"
+#import "AppDelegate.h"
 #import <UIKit/UIKit.h>
 
 @interface TabViewController () {
@@ -48,12 +49,23 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    currentUser = [[User alloc] initWithUid:0 andName:@"Robert Taddeo" andEmail:@"robtaddeo@gmail.com" andImgUrl:@"test.jpg" andNotifications:YES];
+    currentUser = [[User alloc] initWithUid:0 andName:@"NewUser" andEmail:@"robtaddeo@gmail.com" andImgUrl:@"test.jpg" andNotifications:YES];
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    
+    NSFetchRequest *tabRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tab"];
+    NSArray * results = [context executeRequest:tabRequest error:nil];
+    
+    [currentUser setTabs:results];
+    
     [self performSegueWithIdentifier:@"FastSegue" sender:nil];
     
 }
 
 #pragma mark - Table view data source
+
+//NSManagedObjectContext* context =  [[[UIApplication sharedApplication] delegate] managedObjectContext];
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

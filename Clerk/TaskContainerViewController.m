@@ -8,6 +8,7 @@
 
 #import "TaskContainerViewController.h"
 #import "Task.h"
+#import "AppDelegate.h"
 
 @interface TaskContainerViewController ()
 
@@ -115,6 +116,28 @@ NSMutableArray * myTasks;
 //    NSLog(@"%@", [NSString stringWithFormat:@"Count: %ld", (long)[_currentUser getTaskCount]]);
     [_currentUser addTask:newTask];
 //    NSLog(@"%@", [NSString stringWithFormat:@"Count: %ld", (long)[_currentUser getTaskCount]]);
+    
+///====================================================================
+
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    
+    NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:context];
+    
+    NSManagedObject *parentTab = [NSEntityDescription insertNewObjectForEntityForName:@"Tab" inManagedObjectContext:context];
+    
+    [parentTab setValue:_currenTab.getName forKey:@"Title"];
+    
+    [entityNameObj setValue:name forKey:@"title"];
+    [entityNameObj setValue:date forKey:@"dueDate"];
+    
+    [entityNameObj setValue:parentTab forKey:@"parentTab"];
+    
+    [((AppDelegate*)[[UIApplication sharedApplication] delegate]) saveContext];
+    
+    
+///====================================================================
+
     
     [self viewDidLoad];
     [_taskTable reloadData];

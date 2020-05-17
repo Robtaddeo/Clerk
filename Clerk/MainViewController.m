@@ -26,6 +26,8 @@ static NSString *ShowCell = @"cell";
 //    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
+    
+    
 
     
     // TODO: Figure out how to set status bar to black

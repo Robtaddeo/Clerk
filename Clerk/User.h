@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *) getFirstName;
 -(NSString *) getLastName;
 
+-(void) setTabs:(NSArray *) list;
 -(NSMutableArray *) getTabs;
 -(void) addTab:(Tab *) newTab;
 -(NSInteger) getTabCount;

@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06124B0A76C16877B346C763 /* Pods_Clerk_ClerkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2822EA83F36F21180786F839 /* Pods_Clerk_ClerkUITests.framework */; };
 		513BEF25244F3E9C00B42F5B /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF24244F3E9C00B42F5B /* Task.m */; };
 		513BEF28244FA10400B42F5B /* Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF27244FA10400B42F5B /* Tab.m */; };
 		513BEF2E2450D70500B42F5B /* TasksTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 513BEF2D2450D70500B42F5B /* TasksTable.m */; };
@@ -31,11 +30,7 @@
 		51FF7FCE245DF0AD003A0A45 /* ShowNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCD245DF0AD003A0A45 /* ShowNoteViewController.m */; };
 		51FF7FD1245E007B003A0A45 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCF245E007B003A0A45 /* Model.xcdatamodeld */; };
 		51FF7FD4245E2F57003A0A45 /* AddTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FD3245E2F57003A0A45 /* AddTabViewController.m */; };
-		67086BF5F3B26C6C68C07D98 /* Pods_Clerk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C40670C0F84FF271464B51E /* Pods_Clerk.framework */; };
-		7004356B69D0DF5D7E7D5601 /* Pods_ClerkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AAAFA4197B15CAA0DB2123 /* Pods_ClerkTests.framework */; };
-		B773CB40246E273E00456085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B773CB3F246E273E00456085 /* GoogleService-Info.plist */; };
-		B773CB41246E2B2C00456085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B773CB3F246E273E00456085 /* GoogleService-Info.plist */; };
-		B773CB42246E2B2D00456085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B773CB3F246E273E00456085 /* GoogleService-Info.plist */; };
+		B773CB45246F54C200456085 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B773CB43246F54C200456085 /* Data.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15AAAFA4197B15CAA0DB2123 /* Pods_ClerkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClerkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C40670C0F84FF271464B51E /* Pods_Clerk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clerk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20A8932B3A2133C3620A97B4 /* Pods-Clerk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clerk.debug.xcconfig"; path = "Target Support Files/Pods-Clerk/Pods-Clerk.debug.xcconfig"; sourceTree = "<group>"; };
-		2822EA83F36F21180786F839 /* Pods_Clerk_ClerkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clerk_ClerkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		513BEF23244F3E9C00B42F5B /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		513BEF24244F3E9C00B42F5B /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		513BEF26244FA10400B42F5B /* Tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tab.h; sourceTree = "<group>"; };
@@ -105,12 +96,7 @@
 		51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		51FF7FD2245E2F57003A0A45 /* AddTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTabViewController.h; sourceTree = "<group>"; };
 		51FF7FD3245E2F57003A0A45 /* AddTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTabViewController.m; sourceTree = "<group>"; };
-		5C1F8DA672F0F55651E3AFC8 /* Pods-Clerk-ClerkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clerk-ClerkUITests.release.xcconfig"; path = "Target Support Files/Pods-Clerk-ClerkUITests/Pods-Clerk-ClerkUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81D92ED39EB5D35EDDE53618 /* Pods-ClerkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClerkTests.release.xcconfig"; path = "Target Support Files/Pods-ClerkTests/Pods-ClerkTests.release.xcconfig"; sourceTree = "<group>"; };
-		82597F7042AFAD2B12A59752 /* Pods-Clerk-ClerkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clerk-ClerkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Clerk-ClerkUITests/Pods-Clerk-ClerkUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B773CB3F246E273E00456085 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D2ECA13124E43697086B7FFD /* Pods-Clerk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clerk.release.xcconfig"; path = "Target Support Files/Pods-Clerk/Pods-Clerk.release.xcconfig"; sourceTree = "<group>"; };
-		F6E91B2FB707191932C1DAFD /* Pods-ClerkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClerkTests.debug.xcconfig"; path = "Target Support Files/Pods-ClerkTests/Pods-ClerkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B773CB44246F54C200456085 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67086BF5F3B26C6C68C07D98 /* Pods_Clerk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7004356B69D0DF5D7E7D5601 /* Pods_ClerkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06124B0A76C16877B346C763 /* Pods_Clerk_ClerkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,12 +127,6 @@
 		4871C7A45991542C0D22CB54 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				20A8932B3A2133C3620A97B4 /* Pods-Clerk.debug.xcconfig */,
-				D2ECA13124E43697086B7FFD /* Pods-Clerk.release.xcconfig */,
-				82597F7042AFAD2B12A59752 /* Pods-Clerk-ClerkUITests.debug.xcconfig */,
-				5C1F8DA672F0F55651E3AFC8 /* Pods-Clerk-ClerkUITests.release.xcconfig */,
-				F6E91B2FB707191932C1DAFD /* Pods-ClerkTests.debug.xcconfig */,
-				81D92ED39EB5D35EDDE53618 /* Pods-ClerkTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -162,7 +139,6 @@
 				51EF16F124476F11004B27D0 /* ClerkUITests */,
 				51EF16C924476F0E004B27D0 /* Products */,
 				4871C7A45991542C0D22CB54 /* Pods */,
-				5DB0E059E8366D736FAB4BD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +159,7 @@
 				513BEF23244F3E9C00B42F5B /* Task.h */,
 				51EF16CB24476F0E004B27D0 /* AppDelegate.h */,
 				51EF16CC24476F0E004B27D0 /* AppDelegate.m */,
+				B773CB43246F54C200456085 /* Data.xcdatamodeld */,
 				51EF16CE24476F0E004B27D0 /* SceneDelegate.h */,
 				51EF16CF24476F0E004B27D0 /* SceneDelegate.m */,
 				51EF16D124476F0E004B27D0 /* MainViewController.h */,
@@ -217,7 +194,6 @@
 				51FF7FCF245E007B003A0A45 /* Model.xcdatamodeld */,
 				51FF7FD2245E2F57003A0A45 /* AddTabViewController.h */,
 				51FF7FD3245E2F57003A0A45 /* AddTabViewController.m */,
-				B773CB3F246E273E00456085 /* GoogleService-Info.plist */,
 			);
 			path = Clerk;
 			sourceTree = "<group>";
@@ -240,16 +216,6 @@
 			path = ClerkUITests;
 			sourceTree = "<group>";
 		};
-		5DB0E059E8366D736FAB4BD4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C40670C0F84FF271464B51E /* Pods_Clerk.framework */,
-				2822EA83F36F21180786F839 /* Pods_Clerk_ClerkUITests.framework */,
-				15AAAFA4197B15CAA0DB2123 /* Pods_ClerkTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,11 +223,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51EF16F724476F11004B27D0 /* Build configuration list for PBXNativeTarget "Clerk" */;
 			buildPhases = (
-				429DE314C96610326AC84869 /* [CP] Check Pods Manifest.lock */,
 				51EF16C424476F0E004B27D0 /* Sources */,
 				51EF16C524476F0E004B27D0 /* Frameworks */,
 				51EF16C624476F0E004B27D0 /* Resources */,
-				3162F7007E168B1D536A6C84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,7 +240,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51EF16FA24476F11004B27D0 /* Build configuration list for PBXNativeTarget "ClerkTests" */;
 			buildPhases = (
-				3BDFBAE31460B56F6E95AF73 /* [CP] Check Pods Manifest.lock */,
 				51EF16DF24476F11004B27D0 /* Sources */,
 				51EF16E024476F11004B27D0 /* Frameworks */,
 				51EF16E124476F11004B27D0 /* Resources */,
@@ -295,11 +258,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51EF16FD24476F11004B27D0 /* Build configuration list for PBXNativeTarget "ClerkUITests" */;
 			buildPhases = (
-				0F97C735A2E515855AED0D11 /* [CP] Check Pods Manifest.lock */,
 				51EF16EA24476F11004B27D0 /* Sources */,
 				51EF16EB24476F11004B27D0 /* Frameworks */,
 				51EF16EC24476F11004B27D0 /* Resources */,
-				B8DCF208B32BE540A103B15D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51EF16DB24476F11004B27D0 /* LaunchScreen.storyboard in Resources */,
-				B773CB40246E273E00456085 /* GoogleService-Info.plist in Resources */,
 				51EF16D824476F11004B27D0 /* Assets.xcassets in Resources */,
 				51EF16D624476F0E004B27D0 /* Main.storyboard in Resources */,
 			);
@@ -369,7 +329,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B773CB41246E2B2C00456085 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,114 +336,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B773CB42246E2B2D00456085 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0F97C735A2E515855AED0D11 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Clerk-ClerkUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3162F7007E168B1D536A6C84 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Clerk/Pods-Clerk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Clerk/Pods-Clerk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clerk/Pods-Clerk-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3BDFBAE31460B56F6E95AF73 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ClerkTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		429DE314C96610326AC84869 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Clerk-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8DCF208B32BE540A103B15D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Clerk-ClerkUITests/Pods-Clerk-ClerkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Clerk-ClerkUITests/Pods-Clerk-ClerkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clerk-ClerkUITests/Pods-Clerk-ClerkUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		51EF16C424476F0E004B27D0 /* Sources */ = {
@@ -500,6 +355,7 @@
 				51FF7FC8245DD173003A0A45 /* Note.m in Sources */,
 				51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */,
 				51F898202453700400F1A817 /* TabViewController.m in Sources */,
+				B773CB45246F54C200456085 /* Data.xcdatamodeld in Sources */,
 				51FF7FD1245E007B003A0A45 /* Model.xcdatamodeld in Sources */,
 				51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */,
 				51FF7FCE245DF0AD003A0A45 /* ShowNoteViewController.m in Sources */,
@@ -675,11 +531,12 @@
 		};
 		51EF16F824476F11004B27D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20A8932B3A2133C3620A97B4 /* Pods-Clerk.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TJ64XDD66;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = Clerk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -687,17 +544,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Robert-Taddeo.Clerk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		51EF16F924476F11004B27D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2ECA13124E43697086B7FFD /* Pods-Clerk.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TJ64XDD66;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = Clerk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -705,13 +564,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Robert-Taddeo.Clerk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		51EF16FB24476F11004B27D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6E91B2FB707191932C1DAFD /* Pods-ClerkTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -732,7 +591,6 @@
 		};
 		51EF16FC24476F11004B27D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81D92ED39EB5D35EDDE53618 /* Pods-ClerkTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -753,7 +611,6 @@
 		};
 		51EF16FE24476F11004B27D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82597F7042AFAD2B12A59752 /* Pods-Clerk-ClerkUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TJ64XDD66;
@@ -772,7 +629,6 @@
 		};
 		51EF16FF24476F11004B27D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C1F8DA672F0F55651E3AFC8 /* Pods-Clerk-ClerkUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TJ64XDD66;
@@ -838,6 +694,16 @@
 			);
 			currentVersion = 51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		B773CB43246F54C200456085 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B773CB44246F54C200456085 /* Data.xcdatamodel */,
+			);
+			currentVersion = B773CB44246F54C200456085 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+//#import <CoreData/CoreData.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
 @interface AddTabViewController : UIViewController
 
+//
+//@synthesize managedObjectContext = __managedObjectContext;
+//@synthesize managedObjectModel = __managedObjectModel;
+//@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 @property (weak, nonatomic) IBOutlet UIButton *addTabButton;
 @property (weak, nonatomic) IBOutlet UITextField *tabNameTextField;
