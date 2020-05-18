@@ -80,9 +80,9 @@
             AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
             NSManagedObjectContext* context = appDelegate.managedObjectContext;
         
-        NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+        NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"NoteObj" inManagedObjectContext:context];
         
-        NSManagedObject *parentTab = [NSEntityDescription insertNewObjectForEntityForName:@"Tab" inManagedObjectContext:context];
+        NSManagedObject *parentTab = [NSEntityDescription insertNewObjectForEntityForName:@"TabObj" inManagedObjectContext:context];
         
         [parentTab setValue:_currentTab.getName forKey:@"title"];
         

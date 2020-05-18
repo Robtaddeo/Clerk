@@ -30,7 +30,6 @@
 		51FF7FCE245DF0AD003A0A45 /* ShowNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCD245DF0AD003A0A45 /* ShowNoteViewController.m */; };
 		51FF7FD1245E007B003A0A45 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FCF245E007B003A0A45 /* Model.xcdatamodeld */; };
 		51FF7FD4245E2F57003A0A45 /* AddTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FF7FD3245E2F57003A0A45 /* AddTabViewController.m */; };
-		B773CB45246F54C200456085 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B773CB43246F54C200456085 /* Data.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +95,6 @@
 		51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		51FF7FD2245E2F57003A0A45 /* AddTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTabViewController.h; sourceTree = "<group>"; };
 		51FF7FD3245E2F57003A0A45 /* AddTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTabViewController.m; sourceTree = "<group>"; };
-		B773CB44246F54C200456085 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +157,6 @@
 				513BEF23244F3E9C00B42F5B /* Task.h */,
 				51EF16CB24476F0E004B27D0 /* AppDelegate.h */,
 				51EF16CC24476F0E004B27D0 /* AppDelegate.m */,
-				B773CB43246F54C200456085 /* Data.xcdatamodeld */,
 				51EF16CE24476F0E004B27D0 /* SceneDelegate.h */,
 				51EF16CF24476F0E004B27D0 /* SceneDelegate.m */,
 				51EF16D124476F0E004B27D0 /* MainViewController.h */,
@@ -355,7 +352,6 @@
 				51FF7FC8245DD173003A0A45 /* Note.m in Sources */,
 				51EF16D324476F0E004B27D0 /* MainViewController.m in Sources */,
 				51F898202453700400F1A817 /* TabViewController.m in Sources */,
-				B773CB45246F54C200456085 /* Data.xcdatamodeld in Sources */,
 				51FF7FD1245E007B003A0A45 /* Model.xcdatamodeld in Sources */,
 				51EF16CD24476F0E004B27D0 /* AppDelegate.m in Sources */,
 				51FF7FCE245DF0AD003A0A45 /* ShowNoteViewController.m in Sources */,
@@ -694,16 +690,6 @@
 			);
 			currentVersion = 51FF7FD0245E007B003A0A45 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		B773CB43246F54C200456085 /* Data.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B773CB44246F54C200456085 /* Data.xcdatamodel */,
-			);
-			currentVersion = B773CB44246F54C200456085 /* Data.xcdatamodel */;
-			path = Data.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

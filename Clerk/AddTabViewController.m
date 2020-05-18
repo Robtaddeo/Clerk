@@ -103,13 +103,13 @@
         NSManagedObjectContext* context = appDelegate.managedObjectContext;
         
         
-        NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"Tab" inManagedObjectContext:context];
+        NSManagedObject *entityNameObj = [NSEntityDescription insertNewObjectForEntityForName:@"TabObj" inManagedObjectContext:context];
         [entityNameObj setValue:_tabNameTextField.text forKey:@"title"];
         
         [((AppDelegate*)[[UIApplication sharedApplication] delegate]) saveContext];
 //        [context saveContext];
         
-        NSFetchRequest *testRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tab"];
+        NSFetchRequest *testRequest = [NSFetchRequest fetchRequestWithEntityName:@"TabObj"];
         NSArray *results = [context executeRequest:testRequest error:nil];
         NSLog(@"Tab was named: ", [results valueForKey:@"title"]);
         
