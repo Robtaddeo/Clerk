@@ -10,7 +10,6 @@
 #import <CoreData/CoreData.h>
 
 @import UIKit;
-@import Firebase;
 
 @interface AppDelegate ()
 
@@ -26,8 +25,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    [FIRApp configure];
     return YES;
 }
 

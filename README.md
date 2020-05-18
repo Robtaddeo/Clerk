@@ -1,5 +1,12 @@
 # Clerk
 
+# Screenshots
+
+![Screenshot 1](https://i.ibb.co/pJXMstq/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-05-17-at-23-12-56.png)
+![Screenshot 2](https://i.ibb.co/12QgSjp/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-05-17-at-23-11-15.png)
+![Screenshot 3](https://i.ibb.co/XCwrZqK/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2020-05-17-at-23-10-13.png)
+
+Created by Robert Taddeo and Tej Khanna
 Your life is busy, and sometimes, it’s impossible to remember everything there is to do in a day.
 Have you ever found yourself missing that call, deadline or reminder? Ever wish there was someone
 to help plan your life with you? Look no further, Clerk is the assistant you’ve been looking for.
@@ -12,16 +19,13 @@ plan it with you.
 
 Please run this app using an iPhone X or Xs (Max)
 
-First, install cocoapods
+Some graphics were found on [Dribble](https://www.dribble.com) (I downloaded them a long time ago and I don't remeber specificall where)
 
-```bash
- sudo gem install cocoapods
-```
-Then navigate to the Clerk Directory and install the pods
+## Contributions:
 
-```bash
-pod install
-```
+Interface, Layout, Storyboard Design: Robert
+Core Storage Implementation: Tej
 
 Open the project in xCode, and run it!
+
 
