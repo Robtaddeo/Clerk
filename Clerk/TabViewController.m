@@ -51,13 +51,18 @@
     
     currentUser = [[User alloc] initWithUid:0 andName:@"NewUser" andEmail:@"robtaddeo@gmail.com" andImgUrl:@"test.jpg" andNotifications:YES];
     
-//    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-//    NSManagedObjectContext* context = appDelegate.managedObjectContext;
-//
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+
 //    NSFetchRequest *tabRequest = [NSFetchRequest fetchRequestWithEntityName:@"TabObj"];
-//    NSArray * results = [context executeRequest:tabRequest error:nil];
-//
-//    [currentUser setTabs:results];
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:@"TabObj" inManagedObjectContext:context];
+    [request setEntity:entity];
+    
+    NSArray * results = [context executeRequest:request error:nil];
+
+    [currentUser setTabs:results];
     
     [self performSegueWithIdentifier:@"FastSegue" sender:nil];
     
